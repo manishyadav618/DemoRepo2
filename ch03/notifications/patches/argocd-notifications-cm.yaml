@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: argocd-notifications-cm
+data:
+  trigger.on-sync: |
+    - when: app.status.operationState.phase in ['Succeeded', 'Error', 'Failed']
+      send: [gitlab-webhook]
+  service.webhook.gitlab: |
+    url: https://gitlab.com/api/v4/projects/52795287/trigger/pipeline
+    headers:
+    - name: Content-Type
+      value: multipart/form-data
+  template.gitlab-webhook: |
+    webhook:
+      gitlab:
+        method: POST
+        body: ref=main&token=glptt-9ed026d28fb3079f0a96d92591d742ee9f03c5cb&variables[APPLICATION_DEPLOY_STATUS]={{.app.status.sync.status}}&variables[APPLICATION_NAME]={{.app.metadata.name}}&variables[APPLICATION_GIT_COMMIT]={{.app.status.operationState.operation.sync.revision}}
