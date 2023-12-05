@@ -9,5 +9,5 @@ spec:
   project: default
   source:
     path: ch03/kustomize-installation
-    repoUrl: https://github.com/manishyadav618/DemoRepo2.git
-    targetversion: main
+    repoURL: https://github.com/manishyadav618/DemoRepo2.git
+    targetRevision: master
