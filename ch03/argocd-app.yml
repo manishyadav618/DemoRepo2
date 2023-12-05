@@ -8,6 +8,6 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: ch03/kustomize-install
+    path: ch03/kustomize-installation
     repoUrl: https://github.com/manishyadav618/DemoRepo2.git
     targetversion: main
