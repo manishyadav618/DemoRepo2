@@ -7,3 +7,4 @@ resources:
   - resources/namespace.yaml
 patchesStrategicMerge:
   - resources/argocd-cm.yaml
+  - resources/argocd-rbac-cm.yaml
