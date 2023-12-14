@@ -1,0 +1,11 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: argocd
+spec:
+  description: Project to configure argocd self-manage application
+  destinations:
+    - namespace: argocd
+      server: https://kubernetes.default.svc
+  sourceRepos:
+    - https://github.com/manishyadav618/DemoRepo2.git
