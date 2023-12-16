@@ -9,3 +9,14 @@ spec:
       server: https://kubernetes.default.svc
   sourceRepos:
     - https://github.com/manishyadav618/DemoRepo2.git
+  roles:
+    - name: read-sync
+      description: Read and Sync Privileges
+      policies:
+        - p , proj:argocd:read-sync, applications, get, argocd/*, allow
+        - p , proj:argocd:read-sync, applications, sync, argocd/*, allow
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
+
+
