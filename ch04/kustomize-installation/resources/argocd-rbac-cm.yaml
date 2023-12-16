@@ -7,4 +7,6 @@ data:
   policy.csv: |
     p, role:user-update, accounts, update, *, allow
     p, role:user-update, accounts, get, *, allow
+    p, role:sync-admin, applications, sync, *, allow
     g, alina, role:user-update
+    g, alina, role:sync-admin
